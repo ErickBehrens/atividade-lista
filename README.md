@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+Culinaria Ideas
+Este projeto é uma aplicação web simples para gerenciar uma lista de ideias culinárias usando React. A aplicação permite adicionar, editar e remover ideias culinárias, e é estilizada com CSS básico.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Estrutura do Projeto
+A estrutura do projeto é a seguinte:
+culinaria-ideas/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── IdeaForm.jsx
+│   │   ├── IdeaList.jsx
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
 
-## Available Scripts
+Arquivos
+App.js: Componente principal que gerencia o estado das ideias culinárias e renderiza os componentes IdeaForm e IdeaList.
+IdeaForm.jsx: Componente para adicionar e editar ideias culinárias.
+IdeaList.jsx: Componente para listar e remover ideias culinárias.
+App.css: Arquivo de estilos para a aplicação.
+index.js: Ponto de entrada da aplicação.
 
-In the project directory, you can run:
+Descrição dos Componentes
 
-### `npm start`
+App.js
+Este arquivo contém o componente principal da aplicação.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+useState: Hook do React utilizado para gerenciar o estado das ideias culinárias.
+addIdea: Função para adicionar uma nova ideia culinária ao estado. Se o índice de edição (editIndex) não for nulo, a ideia existente é atualizada. Caso contrário, uma nova ideia é adicionada.
+removeIdea: Função para remover uma ideia culinária do estado com base no índice.
+editIdea: Função para configurar a ideia atual e o índice de edição quando o botão de editar é clicado.
+return: Renderiza o componente IdeaForm para adicionar e editar ideias e o componente IdeaList para listar e remover ideias existentes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+IdeaForm.jsx
+Este arquivo contém o componente de formulário para adicionar e editar ideias culinárias.
 
-### `npm test`
+useState: Hook do React utilizado para gerenciar o estado da nova ideia culinária.
+useEffect: Hook do React utilizado para atualizar o campo de entrada ao editar uma ideia.
+handleSubmit: Função chamada ao submeter o formulário, adiciona a nova ideia ou atualiza a existente, e reseta o campo de entrada.
+return: Renderiza um formulário com um campo de texto e um botão para adicionar ou editar ideias.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+IdeaList.jsx
+Este arquivo contém o componente para listar e remover ideias culinárias.
 
-### `npm run build`
+props.ideas: Lista de ideias culinárias passadas como prop do componente App.
+props.removeIdea: Função para remover uma ideia com base no índice, passada como prop do componente App.
+props.editIdea: Função para editar uma ideia com base no índice, passada como prop do componente App.
+return: Renderiza uma lista de ideias culinárias, cada uma com botões para editar e removê-la.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+App.css
+Este arquivo contém os estilos da aplicação.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+body: Estilos para centralizar a aplicação na tela e definir o background.
+.App: Estilos para o contêiner principal da aplicação.
+h1: Estilo para o título principal.
+form: Margem inferior do formulário.
+input: Estilos para o campo de entrada.
+button: Estilos para o botão, incluindo o estado de hover.
+ul: Remoção do padding e estilo de lista.
+li: Estilos para os itens da lista, incluindo botões de edição e remoção.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+index.js
+Este arquivo contém o ponto de entrada da aplicação.
 
-### `npm run eject`
+ReactDOM.render: Renderiza o componente App dentro do elemento com id root no HTML.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Funcionalidades
+Adicionar Ideia: Permite adicionar novas ideias culinárias.
+Editar Ideia: Permite editar ideias culinárias existentes.
+Remover Ideia: Permite remover ideias culinárias da lista.
